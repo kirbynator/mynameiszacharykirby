@@ -9,8 +9,9 @@ class Home extends React.Component {
   }
 
   handleKeyPress = event => {
+    console.log(event.key);
     switch (event.key) {
-      case "ArrowLeft":
+      case "ArrowLeft" || "a":
         if (this.state.go === true) {
           this.setState({
             go: false,
@@ -20,7 +21,7 @@ class Home extends React.Component {
           });
         }
         break;
-      case "ArrowRight":
+      case "ArrowRight" || "d":
         if (this.state.go === true) {
           this.setState({
             go: false,
@@ -30,7 +31,7 @@ class Home extends React.Component {
           });
         }
         break;
-      case "ArrowUp":
+      case "ArrowUp" || "w":
         if (this.state.top === -248 && this.state.left === 736) {
           this.setState({ art: 2 });
           this.props.router("projects");
@@ -49,7 +50,7 @@ class Home extends React.Component {
           });
         }
         break;
-      case "ArrowDown":
+      case "ArrowDown" || "s":
         if (this.state.go === true) {
           this.setState({
             go: false,
@@ -58,7 +59,6 @@ class Home extends React.Component {
             d: setInterval(this.moveDown, 10)
           });
         }
-        // this.setState({ top: this.state.top + 1 });
         break;
     }
   };
@@ -161,57 +161,66 @@ class Home extends React.Component {
           />
           <Image
             id="about"
+            onClick={() => this.props.router("about")}
             style={
               this.state.top < -56
                 ? {
                     position: "relative",
                     left: "704px",
                     top: "230px",
-                    zIndex: "2"
+                    zIndex: "2",
+                    cursor: "pointer"
                   }
                 : {
                     position: "relative",
                     left: "704px",
                     top: "230px",
-                    zIndex: "0"
+                    zIndex: "0",
+                    cursor: "pointer"
                   }
             }
             src="https://piskel-imgstore-b.appspot.com/img/ac2de09c-6e13-11e9-8eb3-6599fce8ec5e.gif"
           />
           <Image
             id="projects"
+            onClick={() => this.props.router("projects")}
             style={
               this.state.top < -250
                 ? {
                     position: "relative",
                     left: "704px",
                     top: "-90px",
-                    zIndex: "2"
+                    zIndex: "2",
+                    cursor: "pointer"
                   }
                 : {
                     position: "relative",
                     left: "704px",
                     top: "-90px",
-                    zIndex: "0"
+                    zIndex: "0",
+                    cursor: "pointer"
                   }
             }
             src="https://piskel-imgstore-b.appspot.com/img/7a302107-6f72-11e9-a9c3-b93eabd0d533.gif"
           />
           <Image
             id="resume"
+            onClick={() => this.props.router("resume")}
             style={
               this.state.top < -250
                 ? {
                     position: "relative",
                     left: "416px",
                     top: "-218px",
-                    zIndex: "2"
+                    zIndex: "2",
+                    cursor: "pointer"
                   }
                 : {
                     position: "relative",
                     left: "416px",
                     top: "-218px",
-                    zIndex: "0"
+                    zIndex: "0",
+                    cursor: "pointer"
                   }
             }
             src="https://piskel-imgstore-b.appspot.com/img/70fabaa8-7047-11e9-8cdf-1993f2e49c9b.gif"

@@ -29,10 +29,17 @@ class Projects extends React.Component {
     switch (event.key) {
       case "ArrowLeft":
         if (
-          (this.state.go === true && this.state.left > 1) ||
+          (this.state.go === true &&
+            this.state.left > 1 &&
+            this.state.left < 513) ||
           (this.state.go === true &&
             this.state.top <= 44 &&
-            this.state.top >= 12)
+            this.state.top >= 12 &&
+            this.state.left < 513) ||
+          (this.state.go === true &&
+            this.state.left > 513 &&
+            this.state.top === -52) ||
+          (this.state.go === true && this.state.top === -20)
         ) {
           this.setState({
             go: false,
@@ -174,6 +181,21 @@ class Projects extends React.Component {
       this.setState({ pos: this.state.pos + 1, left: this.state.left + 1 });
     }
   };
+
+  proclick(eyedee) {
+    clearInterval(this.state.u);
+    clearInterval(this.state.r);
+    clearInterval(this.state.l);
+    clearInterval(this.state.d);
+    this.setState({
+      p: eyedee,
+      top: -20,
+      left: 481,
+      go: false,
+      pos: 0,
+      r: setInterval(this.moveRight, 10)
+    });
+  }
 
   artPick = () => {
     switch (this.state.art) {
@@ -341,7 +363,12 @@ class Projects extends React.Component {
                 height: "64px"
               }}
             />
-            <h1 style={{ color: "#fff" }}>>Query</h1>
+            <h1
+              style={{ color: "#fff", cursor: "pointer" }}
+              onClick={() => this.proclick("query")}
+            >
+              >Query
+            </h1>
           </div>
           <div
             style={{ display: "flex", marginLeft: "-32px", marginTop: "0px" }}
@@ -358,7 +385,12 @@ class Projects extends React.Component {
                 height: "64px"
               }}
             />
-            <h1 style={{ color: "#fff" }}>>SWAPI</h1>
+            <h1
+              style={{ color: "#fff", cursor: "pointer" }}
+              onClick={() => this.proclick("swapi")}
+            >
+              >SWAPI
+            </h1>
           </div>
         </div>
         <div style={{ width: "60%", height: "104%" }}>

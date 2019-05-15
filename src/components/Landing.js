@@ -13,6 +13,8 @@ class Landing extends React.Component {
       this.router("resume");
     } else if (this.props.location.pathname === "/projects") {
       this.router("projects");
+    } else if (this.props.location.pathname === "/about") {
+      this.router("about");
     }
   }
 
@@ -21,6 +23,7 @@ class Landing extends React.Component {
   };
 
   render() {
+    document.body.style = "background: #000";
     switch (this.state.page) {
       case "home":
         return (

@@ -1,10 +1,16 @@
 import React from "react";
 import Rpdf from "../ResumeZacharyKirby.pdf";
 import { Input, Image } from "semantic-ui-react";
-import Navbar from "./Navbar.js";
 
 class Resume extends React.Component {
-  state = { go: true, top: 44, left: -31, art: 0, focused: true };
+  state = {
+    go: true,
+    top: 44,
+    left: -31,
+    art: 3,
+    focused: true,
+    test: window.innerHeight
+  };
 
   componentDidMount() {
     if (this.state.go === true) {
@@ -35,7 +41,10 @@ class Resume extends React.Component {
         }
         break;
       case "ArrowRight":
-        if (this.state.go === true) {
+        if (
+          this.state.go === true &&
+          this.state.left < window.innerWidth - 32
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -45,7 +54,7 @@ class Resume extends React.Component {
         }
         break;
       case "ArrowUp":
-        if (this.state.go === true) {
+        if (this.state.go === true && this.state.top > -52) {
           this.setState({
             go: false,
             pos: 0,
@@ -55,7 +64,10 @@ class Resume extends React.Component {
         }
         break;
       case "ArrowDown":
-        if (this.state.go === true) {
+        if (
+          this.state.go === true &&
+          this.state.top < window.innerHeight - 98
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -221,7 +233,7 @@ class Resume extends React.Component {
             width: "32px",
             zIndex: "0",
             position: "relative",
-            top: `-6px`,
+            top: `-8px`,
             left: `0px`
           }}
         />
