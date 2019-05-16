@@ -33,10 +33,7 @@ class About extends React.Component {
         }
         break;
       case "ArrowRight":
-        if (
-          (this.state.go === true) &
-          (this.state.left < window.innerWidth - 32)
-        ) {
+        if ((this.state.go === true) & (this.state.left < 1248)) {
           this.setState({
             go: false,
             pos: 0,
@@ -56,7 +53,7 @@ class About extends React.Component {
         }
         break;
       case "ArrowDown":
-        if (this.state.go === true && this.state.top < -64) {
+        if (this.state.go === true && this.state.top < 64) {
           this.setState({
             go: false,
             pos: 0,
@@ -167,212 +164,227 @@ class About extends React.Component {
 
   render() {
     return (
-      <div style={{ height: "87%" }}>
-        <Input
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          value="Click Here"
-          autoFocus
-          style={
-            this.state.focused
-              ? { opacity: "0", position: "relative" }
-              : { position: "relative", left: "600px" }
-          }
-          type="text"
-          id="one"
-          onKeyDown={this.handleKeyPress}
-        />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
+      >
         <div
           style={{
-            backgroundColor: "#fff",
-            margin: "5%",
-            marginTop: "-1%",
-            marginLeft: "7%",
-            borderRadius: "5px"
+            width: "1280px",
+            height: "800px",
+            backgroundImage:
+              "url('https://piskel-imgstore-b.appspot.com/img/169b829e-75c2-11e9-b2f3-fffdc3a66250.gif')"
           }}
         >
+          <Input
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            value="Click Here"
+            autoFocus
+            style={
+              this.state.focused
+                ? { opacity: "0", position: "relative" }
+                : { position: "relative", left: "600px" }
+            }
+            type="text"
+            id="one"
+            onKeyDown={this.handleKeyPress}
+          />
           <div
             style={{
-              margin: "15px",
-              fontWeight: "50px",
-              fontSize: "20px",
-              color: "#46878f",
-              textShadow:
-                "-1px -1px 0 #332c50, -1px -1px 0 #332c50, -1px -1px 0 #332c50, -1px -1px 0 #332c50"
+              backgroundColor: "#fff",
+              margin: "5%",
+              marginTop: "-1%",
+              marginLeft: "7%",
+              borderRadius: "5px"
             }}
           >
-            <section>
-              <h1>Zachary Kirby</h1>
-              <p>
-                {" "}
-                A little about me. I am 21 years old. I graduated from Herriman
-                High in 2015. Afterwards, I served an LDS mission in the
-                California Roseville mission. Upon returning home, I graduated
-                form the University of Utahs Web Development Program.
-              </p>
-              <break />
-            </section>
-            <section>
-              <h3>Nicknames</h3>
-              <ul>
-                <li>
+            <div
+              style={{
+                margin: "15px",
+                fontWeight: "50px",
+                fontSize: "20px",
+                color: "#46878f",
+                textShadow:
+                  "-1px -1px 0 #332c50, -1px -1px 0 #332c50, -1px -1px 0 #332c50, -1px -1px 0 #332c50"
+              }}
+            >
+              <section>
+                <h1>Zachary Kirby</h1>
+                <p>
                   {" "}
-                  I go by Kirby pretty often. Too many Zachs in the world.
-                </li>
-                <li> Kirbynator is my online name a lot of the time.</li>
-                <li> Kirbstomp is my street name.</li>
-                <li>
-                  {" "}
-                  Others include: Kirb, Kirbs, Kirbster, Zac-man-do, Zarahemena,
-                  and Zacharias.
-                </li>
-                <li> Just dont call me late for dinner.</li>
-              </ul>
-            </section>
-            <section>
-              <h3>Interests</h3>
-              <ul>
-                <li>
-                  {" "}
-                  Traveling. I have been all over the west coast and east coast,
-                  while sneaking some middle states in on the way.
-                </li>
-                <li>
-                  {" "}
-                  Super Smash Brothers. I have competed in tournaments, both
-                  here in Utah and in California.
-                </li>
-                <li>
-                  {" "}
-                  Table Top Games. My favorites are Clue, Settlers of Catan, and
-                  Magic: the Gathering.
-                </li>
-                <li> Designer Socks. I am an addict of six years now.</li>
-                <li>
-                  {" "}
-                  Outdoors Stuff. I will allways say yes to hiking or boating.
-                </li>
-                <li> Reading. My favorite author is Brandon Sanderson.</li>
-                <li>
-                  {" "}
-                  Music. I will always be bumpin. Fav artists are Gorillaz and
-                  Awolnation.
-                </li>
-              </ul>
-            </section>
-            <section>
-              <h3>Dislikes</h3>
-              <ul>
-                <li> Styrofoam on sytrofoam. Nasty sounding.</li>
-                <li> Lasagna. Not great tasting and difficult to spell.</li>
-                <li> Chapstick. It's a conspiricy man, I'm telling you.</li>
-              </ul>
-            </section>
+                  A little about me. I am 21 years old. I graduated from
+                  Herriman High in 2015. Afterwards, I served an LDS mission in
+                  the California Roseville mission. Upon returning home, I
+                  graduated form the University of Utahs Web Development
+                  Program.
+                </p>
+                <break />
+              </section>
+              <section>
+                <h3>Nicknames</h3>
+                <ul>
+                  <li>
+                    {" "}
+                    I go by Kirby pretty often. Too many Zachs in the world.
+                  </li>
+                  <li> Kirbynator is my online name a lot of the time.</li>
+                  <li> Kirbstomp is my street name.</li>
+                  <li>
+                    {" "}
+                    Others include: Kirb, Kirbs, Kirbster, Zac-man-do,
+                    Zarahemena, and Zacharias.
+                  </li>
+                  <li> Just dont call me late for dinner.</li>
+                </ul>
+              </section>
+              <section>
+                <h3>Interests</h3>
+                <ul>
+                  <li>
+                    {" "}
+                    Traveling. I have been all over the west coast and east
+                    coast, while sneaking some middle states in on the way.
+                  </li>
+                  <li>
+                    {" "}
+                    Super Smash Brothers. I have competed in tournaments, both
+                    here in Utah and in California.
+                  </li>
+                  <li>
+                    {" "}
+                    Table Top Games. My favorites are Clue, Settlers of Catan,
+                    and Magic: the Gathering.
+                  </li>
+                  <li> Designer Socks. I am an addict of six years now.</li>
+                  <li>
+                    {" "}
+                    Outdoors Stuff. I will allways say yes to hiking or boating.
+                  </li>
+                  <li> Reading. My favorite author is Brandon Sanderson.</li>
+                  <li>
+                    {" "}
+                    Music. I will always be bumpin. Fav artists are Gorillaz and
+                    Awolnation.
+                  </li>
+                </ul>
+              </section>
+              <section>
+                <h3>Dislikes</h3>
+                <ul>
+                  <li> Styrofoam on sytrofoam. Nasty sounding.</li>
+                  <li> Lasagna. Not great tasting and difficult to spell.</li>
+                  <li> Chapstick. It's a conspiricy man, I'm telling you.</li>
+                </ul>
+              </section>
+            </div>
           </div>
-        </div>
-        <Image
-          src={this.artPick()}
-          alt="Guy"
-          style={{
-            zIndex: "1",
-            position: "relative",
-            top: `${this.state.top}px`,
-            left: `${this.state.left}px`
-          }}
-        />
-        <Image
-          src="https://piskel-imgstore-b.appspot.com/img/400dc0b0-7040-11e9-91d5-d18bb623238e.gif"
-          alt="Rug"
-          style={{
-            height: "64px",
-            width: "32px",
-            zIndex: "0",
-            position: "relative",
-            top: `-658px`,
-            left: `0px`
-          }}
-        />
-
-        <a
-          href="https://www.instagram.com/kirbynator"
-          target="_blank"
-          id="goinsta"
-          style={{
-            position: "relative",
-            top: `-626px`,
-            left: `32px`,
-            width: "32px"
-          }}
-        >
           <Image
-            src="https://piskel-imgstore-b.appspot.com/img/a059d32e-7682-11e9-94c6-db9806cff2df.gif"
-            alt="Instagram"
+            src={this.artPick()}
+            alt="Guy"
             style={{
-              height: "32px",
-              width: "32px",
-              zIndex: "0"
+              zIndex: "1",
+              position: "relative",
+              top: `${this.state.top}px`,
+              left: `${this.state.left}px`
             }}
           />
-        </a>
-        <a
-          href="https://twitter.com/iAmKirbynator"
-          target="_blank"
-          id="gotwit"
-          style={{
-            position: "relative",
-            top: `-594px`,
-            left: `32px`,
-            width: "32px"
-          }}
-        >
           <Image
-            src="https://piskel-imgstore-b.appspot.com/img/dfd84323-7683-11e9-9c7e-db9806cff2df.gif"
-            alt="Twitter"
+            src="https://piskel-imgstore-b.appspot.com/img/400dc0b0-7040-11e9-91d5-d18bb623238e.gif"
+            alt="Rug"
             style={{
-              height: "32px",
-              width: "32px",
-              zIndex: "0"
-            }}
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/zacharykirby11/"
-          target="_blank"
-          id="goIN"
-          style={{ position: "relative", top: `-562px`, left: `32px` }}
-        >
-          <Image
-            src="https://piskel-imgstore-b.appspot.com/img/74b54621-7684-11e9-852a-db9806cff2df.gif"
-            alt="LinkedIn"
-            style={{
-              height: "32px",
+              height: "64px",
               width: "32px",
               zIndex: "0",
+              position: "relative",
+              top: `-658px`,
+              left: `0px`
+            }}
+          />
+
+          <a
+            href="https://www.instagram.com/kirbynator"
+            target="_blank"
+            id="goinsta"
+            style={{
+              position: "relative",
+              top: `-626px`,
+              left: `32px`,
               width: "32px"
             }}
-          />
-        </a>
-        <a
-          href="https://github.com/kirbynator/"
-          target="_blank"
-          id="gogit"
-          style={{
-            position: "relative",
-            top: `-530px`,
-            left: `32px`,
-            width: "32px"
-          }}
-        >
-          <Image
-            src="https://piskel-imgstore-b.appspot.com/img/73f40a80-759f-11e9-8933-1150286e7278.gif"
-            alt="GitHub"
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/a059d32e-7682-11e9-94c6-db9806cff2df.gif"
+              alt="Instagram"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+          <a
+            href="https://twitter.com/iAmKirbynator"
+            target="_blank"
+            id="gotwit"
             style={{
-              height: "32px",
-              width: "32px",
-              zIndex: "0"
+              position: "relative",
+              top: `-594px`,
+              left: `32px`,
+              width: "32px"
             }}
-          />
-        </a>
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/dfd84323-7683-11e9-9c7e-db9806cff2df.gif"
+              alt="Twitter"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/zacharykirby11/"
+            target="_blank"
+            id="goIN"
+            style={{ position: "relative", top: `-562px`, left: `32px` }}
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/74b54621-7684-11e9-852a-db9806cff2df.gif"
+              alt="LinkedIn"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+          <a
+            href="https://github.com/kirbynator/"
+            target="_blank"
+            id="gogit"
+            style={{
+              position: "relative",
+              top: `-530px`,
+              left: `32px`,
+              width: "32px"
+            }}
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/73f40a80-759f-11e9-8933-1150286e7278.gif"
+              alt="GitHub"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+        </div>
       </div>
     );
   }

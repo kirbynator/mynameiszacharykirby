@@ -241,4 +241,3 @@ class Home extends React.Component {
   }
 }
 export default Home;
-// https://piskel-imgstore-b.appspot.com/img/70fabaa8-7047-11e9-8cdf-1993f2e49c9b.gif

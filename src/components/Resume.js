@@ -41,10 +41,7 @@ class Resume extends React.Component {
         }
         break;
       case "ArrowRight":
-        if (
-          this.state.go === true &&
-          this.state.left < window.innerWidth - 32
-        ) {
+        if (this.state.go === true && this.state.left < 1248) {
           this.setState({
             go: false,
             pos: 0,
@@ -189,121 +186,136 @@ class Resume extends React.Component {
     return (
       <div
         style={{
-          height: window.innerHeight,
-          position: "absolute",
-          top: 40,
-          left: 0,
-          width: "100%",
-          backgroundImage:
-            "url('https://piskel-imgstore-b.appspot.com/img/9aa45a78-7038-11e9-a318-c559c5b0181b.gif')"
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
         }}
       >
-        <Input
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          value="Click Here"
-          autoFocus
-          style={
-            this.state.focused
-              ? { opacity: "0", position: "relative", zIndex: 1 }
-              : { position: "relative", left: "50px", top: "65px", zIndex: 1 }
-          }
-          type="text"
-          id="one"
-          onKeyDown={this.handleKeyPress}
-        />
-
-        <Image
-          src={this.artPick()}
-          alt="Guy"
+        <div
           style={{
-            height: "32px",
-            width: "32px",
-            zIndex: "2",
-            position: "relative",
-            top: `${this.state.top}px`,
-            left: `${this.state.left}px`
+            height: window.innerHeight,
+            width: 1280,
+            backgroundImage:
+              "url('https://piskel-imgstore-b.appspot.com/img/9aa45a78-7038-11e9-a318-c559c5b0181b.gif')"
           }}
-        />
-        <Image
-          src="https://piskel-imgstore-b.appspot.com/img/400dc0b0-7040-11e9-91d5-d18bb623238e.gif"
-          alt="Rug"
-          style={{
-            height: "64px",
-            width: "32px",
-            zIndex: "0",
-            position: "relative",
-            top: `-8px`,
-            left: `0px`
-          }}
-        />
-        <Image
-          id="print"
-          style={{
-            cursor: "pointer",
-            width: "32px",
-            height: "32px",
-            position: "relative",
-            top: "-108px",
-            left: "65px",
-            zIndex: 1
-          }}
-          onClick={() => this.printDiv("pdf")}
-          src="https://piskel-imgstore-b.appspot.com/img/322214d4-70fb-11e9-b6dc-09cdafe7acc1.gif"
-        />
-        <a
-          style={{
-            position: "relative",
-            top: "-140px",
-            left: "130px"
-          }}
-          id="dl"
-          href={Rpdf}
-          type="application/pdf"
-          download="ZacharyKirbyResume"
         >
+          <Input
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+            value="Click Here"
+            autoFocus
+            style={
+              this.state.focused
+                ? { opacity: "0", position: "relative", zIndex: 1 }
+                : {
+                    position: "relative",
+                    left: "50px",
+                    top: "65px",
+                    zIndex: 1
+                  }
+            }
+            type="text"
+            id="one"
+            onKeyDown={this.handleKeyPress}
+          />
+
           <Image
-            id="download"
+            src={this.artPick()}
+            alt="Guy"
             style={{
+              height: "32px",
+              width: "32px",
+              zIndex: "2",
+              position: "relative",
+              top: `${this.state.top}px`,
+              left: `${this.state.left}px`
+            }}
+          />
+          <Image
+            src="https://piskel-imgstore-b.appspot.com/img/400dc0b0-7040-11e9-91d5-d18bb623238e.gif"
+            alt="Rug"
+            style={{
+              height: "64px",
+              width: "32px",
+              zIndex: "0",
+              position: "relative",
+              top: `-8px`,
+              left: `0px`
+            }}
+          />
+          <Image
+            id="print"
+            style={{
+              cursor: "pointer",
               width: "32px",
               height: "32px",
+              position: "relative",
+              top: "-108px",
+              left: "65px",
               zIndex: 1
             }}
-            src="https://piskel-imgstore-b.appspot.com/img/7ed3ad14-71e4-11e9-b93b-b99fbee9d1b6.gif"
+            onClick={() => this.printDiv("pdf")}
+            src="https://piskel-imgstore-b.appspot.com/img/322214d4-70fb-11e9-b6dc-09cdafe7acc1.gif"
           />
-        </a>
-        <div
-          id="object"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "95%",
-            marginBottom: 0
-          }}
-        >
-          <object
+          <a
             style={{
-              width: "800px",
-              height: "95%",
-              marginTop: "1%"
+              position: "relative",
+              top: "-140px",
+              left: "130px"
             }}
-            data={Rpdf}
+            id="dl"
+            href={Rpdf}
             type="application/pdf"
+            download="ZacharyKirbyResume"
           >
-            <embed src={Rpdf} type="application/pdf" />
-          </object>
+            <Image
+              id="download"
+              style={{
+                width: "32px",
+                height: "32px",
+                zIndex: 1
+              }}
+              src="https://piskel-imgstore-b.appspot.com/img/7ed3ad14-71e4-11e9-b93b-b99fbee9d1b6.gif"
+            />
+          </a>
+          <div
+            id="object"
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              position: "absolute",
+              top: 40,
+              left: 0,
+              width: "100%",
+              height: "95%",
+              marginBottom: 0
+            }}
+          >
+            <object
+              style={{
+                width: "800px",
+                height: "95%",
+                marginTop: "3%"
+              }}
+              data={Rpdf}
+              type="application/pdf"
+            >
+              <embed src={Rpdf} type="application/pdf" />
+            </object>
+          </div>
+          <iframe
+            title="myResume"
+            id="printf"
+            ref="pdf"
+            style={{
+              opacity: 0,
+              position: "relative",
+              left: `500px`,
+              top: "-500px"
+            }}
+            src={Rpdf}
+          />
         </div>
-        <iframe
-          title="myResume"
-          id="printf"
-          ref="pdf"
-          style={{ position: "relative", left: `-500px`, top: "-300px" }}
-          src={Rpdf}
-        />
       </div>
     );
   }
