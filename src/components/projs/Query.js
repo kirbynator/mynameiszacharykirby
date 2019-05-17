@@ -99,74 +99,70 @@ class Query extends React.Component {
           scrum leader. Query app is currently being used by DevPoint Labs.
         </h3>
         <div
+          id="gridHolder"
           style={{
-            marginLeft: "7%",
             width: "100%",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "space-around"
           }}
         >
-          <Grid centered>
-            <Grid.Row centered columns={2}>
-              <Grid.Column>
-                <Image
-                  src="https://imgur.com/aKWj0UI.jpeg"
-                  style={{
-                    cursor: "pointer",
-                    width: "250px",
-                    height: "150px",
-                    borderRadius: "14px",
-                    borderStyle: "ridge"
-                  }}
-                  onClick={() => this.setState({ open: true, picnum: 1 })}
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Image
-                  src="https://imgur.com/VuxpuzJ.jpeg"
-                  style={{
-                    cursor: "pointer",
-                    width: "250px",
-                    height: "150px",
-                    borderRadius: "14px",
-                    borderStyle: "ridge"
-                  }}
-                  onClick={() => this.setState({ open: true, picnum: 2 })}
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Image
-                  src="https://imgur.com/ZrKN8Bg.jpeg"
-                  style={{
-                    marginTop: "5%",
-                    cursor: "pointer",
-                    width: "250px",
-                    height: "150px",
-                    borderRadius: "14px",
-                    borderStyle: "ridge"
-                  }}
-                  onClick={() => this.setState({ open: true, picnum: 3 })}
-                />
-              </Grid.Column>
-              <Grid.Column>
-                <Image
-                  src="https://imgur.com/6kD514c.jpeg"
-                  style={{
-                    marginTop: "5%",
-                    cursor: "pointer",
-                    width: "250px",
-                    height: "150px",
-                    borderRadius: "14px",
-                    borderStyle: "ridge"
-                  }}
-                  onClick={() => this.setState({ open: true, picnum: 4 })}
-                />
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+          <Image
+            src="https://imgur.com/aKWj0UI.jpeg"
+            style={{
+              cursor: "pointer",
+              width: "250px",
+              height: "150px",
+              borderRadius: "14px",
+              borderStyle: "ridge"
+            }}
+            onClick={() => this.setState({ open: true, picnum: 1 })}
+          />
+          <Image
+            src="https://imgur.com/VuxpuzJ.jpeg"
+            style={{
+              cursor: "pointer",
+              width: "250px",
+              height: "150px",
+              borderRadius: "14px",
+              borderStyle: "ridge"
+            }}
+            onClick={() => this.setState({ open: true, picnum: 2 })}
+          />
         </div>
-
+        <div
+          id="gridHolder"
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-around",
+            paddingBottom: 15
+          }}
+        >
+          <Image
+            src="https://imgur.com/ZrKN8Bg.jpeg"
+            style={{
+              marginTop: "5%",
+              cursor: "pointer",
+              width: "250px",
+              height: "150px",
+              borderRadius: "14px",
+              borderStyle: "ridge"
+            }}
+            onClick={() => this.setState({ open: true, picnum: 3 })}
+          />
+          <Image
+            src="https://imgur.com/6kD514c.jpeg"
+            style={{
+              marginTop: "5%",
+              cursor: "pointer",
+              width: "250px",
+              height: "150px",
+              borderRadius: "14px",
+              borderStyle: "ridge"
+            }}
+            onClick={() => this.setState({ open: true, picnum: 4 })}
+          />
+        </div>
         {this.modul()}
       </div>
     );

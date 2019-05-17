@@ -76,7 +76,7 @@ class Projects extends React.Component {
         break;
       case "ArrowUp":
         if (
-          (this.state.go === true && this.state.top > 0) ||
+          (this.state.go === true && this.state.top >= -32) ||
           (this.state.go === true &&
             this.state.left > 400 &&
             this.state.top > -32)
