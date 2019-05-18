@@ -7,7 +7,7 @@ import About from "./About";
 import Mobile from "./Mobile";
 
 class Landing extends React.Component {
-  state = { page: "home", top: -216, left: 544 };
+  state = { page: "home", top: -184, left: 576, directions: true };
 
   componentDidMount() {
     if (this.props.location.pathname === "/resume") {
@@ -18,6 +18,10 @@ class Landing extends React.Component {
       this.router("about");
     }
   }
+
+  hide = () => {
+    this.setState({ directions: false });
+  };
 
   router = (x, t, l) => {
     this.setState({ page: x, top: t, left: l });
@@ -32,6 +36,8 @@ class Landing extends React.Component {
             <div>
               <Navbar activeItem={this.state.page} router={this.router} />
               <Home
+                directions={this.state.directions}
+                hide={this.hide}
                 router={this.router}
                 top={this.state.top}
                 left={this.state.left}

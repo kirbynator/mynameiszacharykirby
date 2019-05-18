@@ -2,12 +2,19 @@ import React from "react";
 import { Input, Image } from "semantic-ui-react";
 
 class Home extends React.Component {
-  state = { go: true, top: 0, left: 0, art: 0 };
+  state = { go: true, top: 0, left: 0, art: 0, float: 5, add: true };
 
   componentDidMount() {
-    this.setState({ top: this.props.top, left: this.props.left });
+    this.setState({
+      top: this.props.top,
+      left: this.props.left,
+      f: setInterval(this.bounce, 500)
+    });
   }
 
+  componentWillUnmount() {
+    clearInterval(this.state.f);
+  }
   handleKeyPress = event => {
     console.log(event.key);
     switch (event.key) {
@@ -27,6 +34,7 @@ class Home extends React.Component {
             this.state.left > 864 &&
             this.state.left > 384)
         ) {
+          this.props.hide();
           this.setState({
             go: false,
             pos: 0,
@@ -51,6 +59,7 @@ class Home extends React.Component {
             this.state.left >= 864 &&
             this.state.left < 864)
         ) {
+          this.props.hide();
           this.setState({
             go: false,
             pos: 0,
@@ -90,6 +99,7 @@ class Home extends React.Component {
             this.state.top <= -120 &&
             this.state.top > -225)
         ) {
+          this.props.hide();
           this.setState({
             go: false,
             pos: 0,
@@ -116,6 +126,7 @@ class Home extends React.Component {
             this.state.top < -120 &&
             this.state.top >= -255)
         ) {
+          this.props.hide();
           this.setState({
             go: false,
             pos: 0,
@@ -192,6 +203,20 @@ class Home extends React.Component {
     }
   };
 
+  bounce = () => {
+    if (this.state.float === 5) {
+      this.setState({ float: 4, add: false });
+    } else if (this.state.float === 0) {
+      this.setState({ float: 1, add: true });
+    } else {
+      if (this.state.add === true) {
+        this.setState({ float: this.state.float + 1 });
+      } else {
+        this.setState({ float: this.state.float - 1 });
+      }
+    }
+  };
+
   onBlur = () => {
     this.setState({ focused: false });
   };
@@ -211,7 +236,8 @@ class Home extends React.Component {
         <div
           style={{
             width: "1280px",
-            height: "800px"
+            height: "800px",
+            marginTop: this.state.float - 5
           }}
         >
           <Input
@@ -315,6 +341,16 @@ class Home extends React.Component {
             }}
             src="https://piskel-imgstore-b.appspot.com/img/8e22f88f-791b-11e9-b29c-1f5e4078f9ef.gif"
           />
+          <div
+            style={
+              this.props.directions
+                ? { color: "white", position: "absolute", top: 100, left: 50 }
+                : { position: "absolute", top: 40, left: 5 }
+            }
+          >
+            <h1>USE THE ARROW</h1>
+            <h1 style={{ marginTop: -15, marginLeft: 7 }}> KEYS TO MOVE</h1>
+          </div>
         </div>
       </div>
     );
