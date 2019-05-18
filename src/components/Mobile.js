@@ -4,7 +4,7 @@ import ProjectsM from "./ProjectsM";
 import { Header, Button, Image } from "semantic-ui-react";
 
 class Home extends React.Component {
-  state = { r: "+", p: "+", a: "+" };
+  state = { resize: window.innerWidth, r: "+", p: "+", a: "+" };
 
   about() {
     if (this.state.a === "-") {
@@ -107,7 +107,7 @@ class Home extends React.Component {
   render() {
     document.body.style = "background: #fff";
     return (
-      <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+      <div style={{ width: "100ß%", height: window.innerHeight }}>
         <div
           style={{
             backgroundColor: "#DFC7C1",

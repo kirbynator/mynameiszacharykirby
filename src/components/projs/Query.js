@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Grid, Button } from "semantic-ui-react";
+import { Image, Button } from "semantic-ui-react";
 import ReactModal from "react-modal";
 
 class Query extends React.Component {
@@ -100,15 +100,25 @@ class Query extends React.Component {
         </h3>
         <div
           id="gridHolder"
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-around"
-          }}
+          style={
+            window.innerWidth > 500
+              ? {
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-around"
+                }
+              : {
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column"
+                }
+          }
         >
           <Image
             src="https://imgur.com/aKWj0UI.jpeg"
             style={{
+              marginTop: "5%",
               cursor: "pointer",
               width: "250px",
               height: "150px",
@@ -120,6 +130,7 @@ class Query extends React.Component {
           <Image
             src="https://imgur.com/VuxpuzJ.jpeg"
             style={{
+              marginTop: "5%",
               cursor: "pointer",
               width: "250px",
               height: "150px",
@@ -131,12 +142,22 @@ class Query extends React.Component {
         </div>
         <div
           id="gridHolder"
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-around",
-            paddingBottom: 15
-          }}
+          style={
+            window.innerWidth > 500
+              ? {
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  paddingBottom: 15
+                }
+              : {
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  paddingBottom: 15
+                }
+          }
         >
           <Image
             src="https://imgur.com/ZrKN8Bg.jpeg"

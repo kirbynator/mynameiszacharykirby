@@ -12,7 +12,21 @@ class Home extends React.Component {
     console.log(event.key);
     switch (event.key) {
       case "ArrowLeft" || "a":
-        if (this.state.go === true) {
+        if (
+          (this.state.go === true &&
+            this.state.top >= -248 &&
+            this.state.left > 384) ||
+          (this.state.go === true &&
+            this.state.top > -344 &&
+            this.state.top < -248 &&
+            this.state.left <= 384 &&
+            this.state.left > 384) ||
+          (this.state.go === true &&
+            this.state.top > -344 &&
+            this.state.top < -248 &&
+            this.state.left > 864 &&
+            this.state.left > 384)
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -22,7 +36,21 @@ class Home extends React.Component {
         }
         break;
       case "ArrowRight" || "d":
-        if (this.state.go === true) {
+        if (
+          (this.state.go === true &&
+            this.state.top >= -248 &&
+            this.state.left < 864) ||
+          (this.state.go === true &&
+            this.state.top > -344 &&
+            this.state.top < -248 &&
+            this.state.left < 384 &&
+            this.state.left < 864) ||
+          (this.state.go === true &&
+            this.state.top > -344 &&
+            this.state.top < -248 &&
+            this.state.left >= 864 &&
+            this.state.left < 864)
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -32,16 +60,36 @@ class Home extends React.Component {
         }
         break;
       case "ArrowUp" || "w":
-        if (this.state.top === -248 && this.state.left === 736) {
+        if (this.state.top === -248 && this.state.left === 608) {
           this.setState({ art: 2 });
           this.props.router("projects");
-        } else if (this.state.top === -56 && this.state.left === 736) {
+        } else if (this.state.top === -248 && this.state.left === 768) {
           this.setState({ art: 2 });
           this.props.router("about");
         } else if (this.state.top === -248 && this.state.left === 448) {
           this.setState({ art: 2 });
           this.props.router("resume");
-        } else if (this.state.go === true) {
+        } else if (
+          (this.state.go === true &&
+            this.state.left === 544 &&
+            this.state.top <= -120 &&
+            this.state.top >= -300) ||
+          (this.state.go === true &&
+            this.state.left === 704 &&
+            this.state.top <= -120 &&
+            this.state.top >= -300) ||
+          (this.state.go === true &&
+            this.state.left === 384 &&
+            this.state.top <= -120 &&
+            this.state.top >= -300) ||
+          (this.state.go === true &&
+            this.state.left === 864 &&
+            this.state.top <= -120 &&
+            this.state.top >= -300) ||
+          (this.state.go === true &&
+            this.state.top <= -120 &&
+            this.state.top > -225)
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -51,7 +99,23 @@ class Home extends React.Component {
         }
         break;
       case "ArrowDown" || "s":
-        if (this.state.go === true) {
+        if (
+          (this.state.go === true &&
+            this.state.left === 544 &&
+            this.state.top < -120) ||
+          (this.state.go === true &&
+            this.state.left === 704 &&
+            this.state.top < -120) ||
+          (this.state.go === true &&
+            this.state.left === 384 &&
+            this.state.top < -120) ||
+          (this.state.go === true &&
+            this.state.left === 864 &&
+            this.state.top < -120) ||
+          (this.state.go === true &&
+            this.state.top < -120 &&
+            this.state.top >= -255)
+        ) {
           this.setState({
             go: false,
             pos: 0,
@@ -144,7 +208,12 @@ class Home extends React.Component {
           justifyContent: "center"
         }}
       >
-        <div style={{ width: "1280px", height: "800px" }}>
+        <div
+          style={{
+            width: "1280px",
+            height: "800px"
+          }}
+        >
           <Input
             onFocus={this.onFocus}
             onBlur={this.onBlur}
@@ -163,18 +232,18 @@ class Home extends React.Component {
             id="about"
             onClick={() => this.props.router("about")}
             style={
-              this.state.top < -56
+              this.state.top < -250
                 ? {
                     position: "relative",
-                    left: "704px",
-                    top: "230px",
+                    left: "736px",
+                    top: "38px",
                     zIndex: "2",
                     cursor: "pointer"
                   }
                 : {
                     position: "relative",
-                    left: "704px",
-                    top: "230px",
+                    left: "736px",
+                    top: "38px",
                     zIndex: "0",
                     cursor: "pointer"
                   }
@@ -188,14 +257,14 @@ class Home extends React.Component {
               this.state.top < -250
                 ? {
                     position: "relative",
-                    left: "704px",
+                    left: "576px",
                     top: "-90px",
                     zIndex: "2",
                     cursor: "pointer"
                   }
                 : {
                     position: "relative",
-                    left: "704px",
+                    left: "576px",
                     top: "-90px",
                     zIndex: "0",
                     cursor: "pointer"
@@ -234,6 +303,17 @@ class Home extends React.Component {
               top: `${this.state.top}px`,
               left: `${this.state.left}px`
             }}
+          />
+          <Image
+            style={{
+              position: "relative",
+              top: -425,
+              left: "337px",
+              zIndex: -11,
+              width: 608,
+              height: 608
+            }}
+            src="https://piskel-imgstore-b.appspot.com/img/8e22f88f-791b-11e9-b29c-1f5e4078f9ef.gif"
           />
         </div>
       </div>

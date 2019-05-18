@@ -122,7 +122,7 @@ class About extends React.Component {
           break;
       }
     } else if (this.state.left < 0) {
-      this.props.router("home", -56, 736);
+      this.props.router("home", -248, 768);
     }
   }
 

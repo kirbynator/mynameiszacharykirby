@@ -7,7 +7,7 @@ import About from "./About";
 import Mobile from "./Mobile";
 
 class Landing extends React.Component {
-  state = { page: "home", top: -248, left: 544 };
+  state = { page: "home", top: -216, left: 544 };
 
   componentDidMount() {
     if (this.props.location.pathname === "/resume") {

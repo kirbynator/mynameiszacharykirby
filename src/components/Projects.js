@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Image } from "semantic-ui-react";
 import Query from "./projs/Query";
 import SWAPI from "./projs/SWAPI";
+import Utoob from "./projs/Utoob";
 
 class Projects extends React.Component {
   state = {
@@ -62,6 +63,7 @@ class Projects extends React.Component {
           (this.state.go === true && this.state.left < 132) ||
           (this.state.go === true && this.state.top === 44) ||
           (this.state.go === true && this.state.top === 108) ||
+          (this.state.go === true && this.state.top === 172) ||
           (this.state.go === true &&
             this.state.left > 480 &&
             this.state.left < 1248)
@@ -140,7 +142,7 @@ class Projects extends React.Component {
       if (this.state.top === -20 && this.state.left === 481) {
         this.up();
       } else if (this.state.left <= -11) {
-        this.props.router("home", -248, 736);
+        this.props.router("home", -248, 608);
       } else if (this.state.top === -52 && this.state.left === 577) {
         this.setState({ art: 4, go: true });
         document.getElementById("gogit").click();
@@ -170,6 +172,15 @@ class Projects extends React.Component {
       } else if (this.state.top === 108 && this.state.left === 193) {
         this.setState({
           p: "swapi",
+          top: -20,
+          left: 481,
+          go: false,
+          pos: 0,
+          r: setInterval(this.moveRight, 10)
+        });
+      } else if (this.state.top === 172 && this.state.left === 193) {
+        this.setState({
+          p: "utoob",
           top: -20,
           left: 481,
           go: false,
@@ -253,6 +264,16 @@ class Projects extends React.Component {
           pos: 0,
           l: setInterval(this.moveLeft, 10)
         });
+        break;
+      case "utoob":
+        this.setState({
+          top: 172,
+          left: 193,
+          p: "none",
+          pos: 0,
+          l: setInterval(this.moveLeft, 10)
+        });
+        break;
     }
   }
 
@@ -261,7 +282,7 @@ class Projects extends React.Component {
       case "query":
         return [
           <Query toogle={this.toogleInv} />,
-          "https://github.com/devpointlabs/query",
+          "https://github.com/kirbynator/query",
           "https://query-dpl.herokuapp.com/register/teacher"
         ];
         break;
@@ -270,6 +291,12 @@ class Projects extends React.Component {
           <SWAPI toogle={this.toogleInv} />,
           "https://github.com/kirbynator/SWAPI",
           "/StarWarsApi"
+        ];
+        break;
+      case "utoob":
+        return [
+          <Utoob toogle={this.toogleInv} />,
+          "https://github.com/kirbynator/hackathon_2"
         ];
         break;
       default:
@@ -452,6 +479,43 @@ class Projects extends React.Component {
                   onClick={() => this.proclick("swapi")}
                 >
                   >SWAPI
+                </h1>
+              </div>
+              <div
+                style={{
+                  opacity: `${this.state.invis}`,
+                  display: "flex",
+                  marginLeft: "-32px",
+                  marginTop: "0px"
+                }}
+              >
+                <Image
+                  src="https://piskel-imgstore-b.appspot.com/img/5692d7c2-720b-11e9-b28a-a77ca29da524.gif"
+                  style={{
+                    opacity: `${this.state.invis}`,
+                    height: "32px",
+                    width: "32px",
+                    marginTop: "31px"
+                  }}
+                />
+                <div
+                  style={{
+                    opacity: `${this.state.invis}`,
+                    backgroundColor: "#000",
+                    zIndex: 2,
+                    width: "64px",
+                    height: "64px"
+                  }}
+                />
+                <h1
+                  style={{
+                    opacity: `${this.state.invis}`,
+                    color: "#fff",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => this.proclick("utoob")}
+                >
+                  >Utoob
                 </h1>
               </div>
             </div>

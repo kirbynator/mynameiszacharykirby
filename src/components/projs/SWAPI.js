@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, Image } from "semantic-ui-react";
 
 const SWAPI = props => {
   return (
@@ -21,6 +22,28 @@ const SWAPI = props => {
         <a href="https://swapi.co">https://swapi.co </a> and the pictures are
         pulled from wikipeda.
       </h3>
+      <div
+        id="gridHolder"
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-around"
+        }}
+      >
+        <Card>
+          <Image src={require(`../stawi/characters/5.jpg`)} />
+          <Card.Content>
+            <Card.Header>Leia Organa</Card.Header>
+            <Card.Description>
+              Leia Organa's Home Planet Is Alderaan
+            </Card.Description>
+          </Card.Content>
+        </Card>
+        <div>
+          <Image src={require(`../stawi/planets/5.jpg`)} />
+          <h1>Alderaan</h1>
+        </div>
+      </div>
     </div>
   );
 };
