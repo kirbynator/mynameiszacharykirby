@@ -94,7 +94,7 @@ class Query extends React.Component {
         <h3 style={{ color: "#fff", margin: "3%" }}>
           Query is an app for quick, on the fly, quizzes for use both in the
           classroom, and for mass survey data gathering. I collaborated with a
-          team of other programers to create, test and refine the Query app. In
+          team of other programers to create, test, and refine the Query app. In
           doing so, we practiced agile software development, where I was the
           scrum leader. Query app is currently being used by DevPoint Labs.
         </h3>

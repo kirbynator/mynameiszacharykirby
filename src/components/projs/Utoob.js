@@ -137,7 +137,7 @@ class Utoob extends React.Component {
           <h1 style={{ color: "#fff" }}>Utoob</h1>
           <h3 style={{ color: "#fff", margin: "3%" }}>
             Utoob is a YouTube knock off. I made Utoob with a team of three
-            other developers for the DevPoint 2019 Spring Hackton. Provided was
+            other developers for the DevPoint 2019 Spring Hackthon. Provided was
             a wire frame to follow and objectives to hit. After of eight hours
             of straight programming, my team ended up bringing home the trophy!
           </h3>
