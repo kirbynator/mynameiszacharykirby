@@ -2,6 +2,7 @@ import React from "react";
 import Rpdf from "../ResumeZacharyKirby.pdf";
 import ProjectsM from "./ProjectsM";
 import { Header, Button, Image } from "semantic-ui-react";
+import logo from "./Asset_1.svg";
 
 class Home extends React.Component {
   state = { resize: window.innerWidth, r: "+", p: "+", a: "+" };
@@ -88,7 +89,7 @@ class Home extends React.Component {
     if (this.state.r === "-") {
       return (
         <div>
-          <Image src="https://imgur.com/qrQou3p.png" />
+          <Image src="https://imgur.com/KetwEQd.png" />
           <a
             id="dl"
             href={Rpdf}
@@ -107,20 +108,22 @@ class Home extends React.Component {
   render() {
     document.body.style = "background: #fff";
     return (
-      <div style={{ width: "100ß%", height: window.innerHeight }}>
+      <div style={{ width: "100%", height: window.innerHeight }}>
         <div
           style={{
             backgroundColor: "#DFC7C1",
             width: "100%",
-            height: "20%",
+            height: "35%",
             display: "flex",
             justifyContent: "center",
             alignItems: "center"
           }}
         >
-          <Header as="h1" style={{ color: "#fff", paddingTop: "1em" }}>
-            My Name Is Zachary Kirby
-          </Header>
+          <img
+            style={{ width: "100%", height: "100%" }}
+            src={require("./Asset_1.svg")}
+            alt="Logo"
+          />
         </div>
         <div
           style={{
@@ -148,7 +151,7 @@ class Home extends React.Component {
               : {
                   backgroundColor: "#B2D9EA",
                   width: "100%",
-                  height: "25%",
+                  height: "20%",
                   textAlign: "center"
                 }
           }
@@ -175,7 +178,7 @@ class Home extends React.Component {
               : {
                   backgroundColor: "#84B4C8",
                   width: "100%",
-                  height: "25%",
+                  height: "20%",
                   textAlign: "center"
                 }
           }
@@ -202,7 +205,7 @@ class Home extends React.Component {
               : {
                   backgroundColor: "#619196",
                   width: "100%",
-                  height: "25%",
+                  height: "20%",
                   textAlign: "center"
                 }
           }
