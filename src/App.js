@@ -8,7 +8,7 @@ import "./App.css";
 const App = () => (
   <Fragment>
     <Switch>
-      <Route exact path="/StarWarsApi" component={SWAPI} />
+      <Route exact path="/mynameiszacharykirby/StarWarsApi" component={SWAPI} />
       <Route path="/" component={Landing} />
       {/* <Route component={NoMatch} /> */}
     </Switch>
