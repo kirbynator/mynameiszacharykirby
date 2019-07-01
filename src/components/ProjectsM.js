@@ -36,7 +36,7 @@ class PM extends React.Component {
       <div>
         <SWAPI />
         <Button.Group style={{ width: "100%" }}>
-          <Button onClick={() => this.linker("/mynameiszacharykirby/StarWarsApi")}>Visit</Button>
+          <Button onClick={() => this.linker("https://compassionate-williams-70079a.netlify.com")}>Visit</Button>
           <Button.Or />
           <Button
             onClick={() =>

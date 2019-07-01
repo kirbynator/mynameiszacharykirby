@@ -290,7 +290,7 @@ class Projects extends React.Component {
         return [
           <SWAPI toogle={this.toogleInv} />,
           "https://github.com/kirbynator/SWAPI",
-          "/mynameiszacharykirby/StarWarsApi"
+          "https://compassionate-williams-70079a.netlify.com"
         ];
         break;
       case "utoob":
