@@ -89,7 +89,7 @@ class Home extends React.Component {
     if (this.state.r === "-") {
       return (
         <div>
-          <Image src="https://imgur.com/KetwEQd.png" />
+          <Image src="https://imgur.com/t4DioF0.png" />
           <a
             id="dl"
             href={Rpdf}

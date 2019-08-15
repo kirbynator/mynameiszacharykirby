@@ -275,7 +275,7 @@ class About extends React.Component {
               <section>
                 <h3>Dislikes</h3>
                 <ul>
-                  <li> Styrofoam on sytrofoam. Nasty sounding.</li>
+                  <li> Styrofoam on styrofoam. Nasty sounding.</li>
                   <li> Lasagna. Not great tasting and difficult to spell.</li>
                   <li> Chapstick. It's a conspiricy man, I'm telling you.</li>
                 </ul>

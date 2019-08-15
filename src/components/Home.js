@@ -345,7 +345,7 @@ class Home extends React.Component {
             style={
               this.props.directions
                 ? { color: "white", position: "absolute", top: 100, left: 50 }
-                : { position: "absolute", top: 40, left: 5 }
+                : { position: "absolute", top: 100, left: 50 }
             }
           >
             <h1>USE THE ARROW</h1>
