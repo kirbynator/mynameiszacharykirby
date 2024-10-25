@@ -7,6 +7,16 @@ import logo from "./Asset_1.svg";
 class Home extends React.Component {
   state = { resize: window.innerWidth, r: "+", p: "+", a: "+" };
 
+  yearsAgo = (date) => {
+    const currentDate = new Date();
+    const inputDate = new Date(date);
+
+    const differenceInMilliseconds = currentDate - inputDate;
+    const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25; // Including leap years
+
+    return Math.floor(differenceInMilliseconds / millisecondsPerYear);
+  }
+
   about() {
     if (this.state.a === "-") {
       return (
@@ -15,62 +25,45 @@ class Home extends React.Component {
             <section>
               <p>
                 {" "}
-                If you can't tell from the website, my name is Zachary Kirby. A
-                little about me. I am 21 years old. I graduated from Herriman
-                High in 2015. Afterwards, I served an LDS mission in the
-                California Roseville mission. Upon returning home, I graduated
-                form the University of Utahs Web Development Program.
-              </p>
+                Hello! Welcome to my website. My name is Zach Kirby. I go by Kirby pretty often. Too many Zachs in the world. I have been a software developer for {this.yearsAgo('2020-04-01')} years, both as a hobby and professionally.
+                Professionally I am a full stack web developer. I have had the oppertunity wear many hats do that and enjoy learning the tech that comes with them.
+                As a hobby I do video game development. I do weekend competitions, called game jams, once in a while. Mostly I work on my first commercial game. 
+                Some non-code relatived things about me.
+                I am {this.yearsAgo('1997-05-30')} years old. I grew up in South Jordan, UT and graduated from
+                High School in 2015. Afterwards, I served an LDS mission in
+                the California Roseville mission. Upon returning home, I
+                graduated form the University of Utahs Web Development Program.
+              </p>              
               <break />
             </section>
             <section>
-              <h3>Nicknames</h3>
-              <ul>
-                <li>
-                  {" "}
-                  I go by Kirby pretty often. Too many Zachs in the world.
-                </li>
-                <li> Kirbynator is my online name a lot of the time.</li>
-                <li> Kirbstomp is my street name.</li>
-                <li>
-                  {" "}
-                  Others include: Kirb, Kirbs, Kirbster, Zac-man-do, Zarahemena,
-                  and Zacharias.
-                </li>
-                <li> Just dont call me late for dinner.</li>
-              </ul>
-            </section>
-            <section>
-              <h3>Interests</h3>
-              <ul>
-                <li>
-                  {" "}
-                  Traveling. I have been all over the west coast and east coast,
-                  while sneaking some middle states in on the way.
-                </li>
-                <li>
-                  {" "}
-                  Super Smash Brothers. I have competed in tournaments, both
-                  here in Utah and in California.
-                </li>
-                <li>
-                  {" "}
-                  Table Top Games. My favorites are Clue, Settlers of Catan, and
-                  Magic: the Gathering.
-                </li>
-                <li> Designer Socks. I am an addict of six years now.</li>
-                <li>
-                  {" "}
-                  Outdoors Stuff. I will allways say yes to hiking or boating.
-                </li>
-                <li> Reading. My favorite author is Brandon Sanderson.</li>
-                <li>
-                  {" "}
-                  Music. I will always be bumpin. Fav artists are Gorillaz and
-                  Awolnation.
-                </li>
-              </ul>
-            </section>
+                <h3>Interests</h3>
+                <ul>
+                  <li>
+                    {" "}
+                    Traveling. I have been all over the west coast and east
+                    coast, while sneaking some middle states and Japan in on the way.
+                  </li>
+                  <li>
+                    {" "}
+                    Super Smash Brothers. I have competed in tournaments, both
+                    here in Utah and in California.
+                  </li>
+                  <li>
+                    {" "}
+                    Game Design. Both tabletop and videogames. Check out the short games I've made <a target="_blank" href="https://kirbynator.itch.io/">here</a> and <a target="_blank" href="https://kirbynator.github.io/BugJarBattles/">here</a>.
+                  </li>
+                  <li>
+                    {" "}
+                    Outdoors Stuff. I will allways say yes to hiking or boating. I also have a Jeep I'll take off-roading
+                  </li>
+                  <li> Reading. My favorite author is Brandon Sanderson.</li>
+                  <li>
+                    {" "}
+                    Music. My favorite artists are Gorillaz and The Midnight. I also go to concerts quite often!
+                  </li>
+                </ul>
+              </section>
             <section>
               <h3>Dislikes</h3>
               <ul>
@@ -89,7 +82,17 @@ class Home extends React.Component {
     if (this.state.r === "-") {
       return (
         <div>
-          <Image src="https://imgur.com/t4DioF0.png" />
+          <object
+              style={{
+                width: "100%",
+                height: "75em",
+                marginTop: "3%"
+              }}
+              data={Rpdf}
+              type="application/pdf"
+            >
+              <embed src={Rpdf} type="application/pdf" />
+            </object>
           <a
             id="dl"
             href={Rpdf}

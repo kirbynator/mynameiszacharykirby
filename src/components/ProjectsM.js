@@ -1,6 +1,6 @@
 import React from "react";
 import Query from "./projs/Query";
-import SWAPI from "./projs/SWAPI";
+import BugJarBattles from "./projs/BugJarBattles";
 import Utoob from "./projs/Utoob";
 import { Header, Button, Image } from "semantic-ui-react";
 
@@ -34,7 +34,7 @@ class PM extends React.Component {
   swapi() {
     return (
       <div>
-        <SWAPI />
+        <BugJarBattles toogle={this.doesnothing} />
         <Button.Group style={{ width: "100%" }}>
           <Button onClick={() => this.linker("https://compassionate-williams-70079a.netlify.com")}>Visit</Button>
           <Button.Or />
@@ -113,7 +113,7 @@ class PM extends React.Component {
           }
         >
           <Header as="h3" style={{ color: "#fff", paddingTop: "3px" }}>
-            {`SWAPI ${this.state.s}`}
+            {`BugJarBattles ${this.state.s}`}
           </Header>
         </div>
         {this.state.s === "-" ? this.swapi() : null}

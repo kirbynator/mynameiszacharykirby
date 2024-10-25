@@ -1,7 +1,7 @@
 import React from "react";
 import { Input, Image } from "semantic-ui-react";
 import Query from "./projs/Query";
-import SWAPI from "./projs/SWAPI";
+import BugJarBattles from "./projs/BugJarBattles";
 import Utoob from "./projs/Utoob";
 
 class Projects extends React.Component {
@@ -171,7 +171,7 @@ class Projects extends React.Component {
         });
       } else if (this.state.top === 108 && this.state.left === 193) {
         this.setState({
-          p: "swapi",
+          p: "BugJarBattles",
           top: -20,
           left: 481,
           go: false,
@@ -288,9 +288,9 @@ class Projects extends React.Component {
         break;
       case "swapi":
         return [
-          <SWAPI toogle={this.toogleInv} />,
-          "https://github.com/kirbynator/SWAPI",
-          "https://compassionate-williams-70079a.netlify.com"
+          <BugJarBattles toogle={this.toogleInv} />,
+          "https://github.com/kirbynator/BugJarBattles",
+          "https://kirbynator.github.io/BugJarBattles/"
         ];
         break;
       case "utoob":
@@ -478,7 +478,7 @@ class Projects extends React.Component {
                   }}
                   onClick={() => this.proclick("swapi")}
                 >
-                  >SWAPI
+                  >BugJarBattles
                 </h1>
               </div>
               <div

@@ -15,6 +15,16 @@ class About extends React.Component {
     }
   }
 
+  yearsAgo = (date) => {
+    const currentDate = new Date();
+    const inputDate = new Date(date);
+
+    const differenceInMilliseconds = currentDate - inputDate;
+    const millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25; // Including leap years
+
+    return Math.floor(differenceInMilliseconds / millisecondsPerYear);
+}
+
   handleKeyPress = event => {
     switch (event.key) {
       case "ArrowLeft":
@@ -109,16 +119,16 @@ class About extends React.Component {
     if (this.state.left === 32) {
       switch (this.state.top) {
         case -542:
-          document.getElementById("goinsta").click();
-          break;
-        case -478:
-          document.getElementById("gotwit").click();
-          break;
-        case -414:
           document.getElementById("goIN").click();
           break;
-        case -350:
+        case -478:
           document.getElementById("gogit").click();
+          break;
+        case -414:
+          document.getElementById("goinsta").click();
+          break;
+        case -350:
+          document.getElementById("gotwit").click();
           break;
       }
     } else if (this.state.left < 0) {
@@ -216,8 +226,12 @@ class About extends React.Component {
                 <h1>Zachary Kirby</h1>
                 <p>
                   {" "}
-                  A little about me. I am 21 years old. I graduated from
-                  Herriman High in 2015. Afterwards, I served an LDS mission in
+                  Hello! Welcome to my website. My name is Zach Kirby. I go by Kirby pretty often. Too many Zachs in the world. I have been a software developer for {this.yearsAgo('2020-04-01')} years, both as a hobby and professionally.
+                  Professionally I am a full stack web developer. I have had the oppertunity wear many hats do that and enjoy learning the tech that comes with them.
+                  As a hobby I do video game development. I do weekend competitions, called game jams, once in a while. Mostly I work on my first commercial game. 
+                  Some non-code relatived things about me.
+                  I am {this.yearsAgo('1997-05-30')} years old. I grew up in South Jordan, UT and graduated from
+                  High School in 2015. Afterwards, I served an LDS mission in
                   the California Roseville mission. Upon returning home, I
                   graduated form the University of Utahs Web Development
                   Program.
@@ -225,29 +239,12 @@ class About extends React.Component {
                 <break />
               </section>
               <section>
-                <h3>Nicknames</h3>
-                <ul>
-                  <li>
-                    {" "}
-                    I go by Kirby pretty often. Too many Zachs in the world.
-                  </li>
-                  <li> Kirbynator is my online name a lot of the time.</li>
-                  <li> Kirbstomp is my street name.</li>
-                  <li>
-                    {" "}
-                    Others include: Kirb, Kirbs, Kirbster, Zac-man-do,
-                    Zarahemena, and Zacharias.
-                  </li>
-                  <li> Just dont call me late for dinner.</li>
-                </ul>
-              </section>
-              <section>
                 <h3>Interests</h3>
                 <ul>
                   <li>
                     {" "}
                     Traveling. I have been all over the west coast and east
-                    coast, while sneaking some middle states in on the way.
+                    coast, while sneaking some middle states and Japan in on the way.
                   </li>
                   <li>
                     {" "}
@@ -256,19 +253,16 @@ class About extends React.Component {
                   </li>
                   <li>
                     {" "}
-                    Table Top Games. My favorites are Clue, Settlers of Catan,
-                    and Magic: the Gathering.
+                    Game Design. Both tabletop and videogames. Check out the short games I've made <a target="_blank" href="https://kirbynator.itch.io/">here</a> and <a target="_blank" href="https://kirbynator.github.io/BugJarBattles/">here</a>.
                   </li>
-                  <li> Designer Socks. I am an addict of six years now.</li>
                   <li>
                     {" "}
-                    Outdoors Stuff. I will allways say yes to hiking or boating.
+                    Outdoors Stuff. I will allways say yes to hiking or boating. I also have a Jeep I'll take off-roading
                   </li>
                   <li> Reading. My favorite author is Brandon Sanderson.</li>
                   <li>
                     {" "}
-                    Music. I will always be bumpin. Fav artists are Gorillaz and
-                    Awolnation.
+                    Music. My favorite artists are Gorillaz and The Midnight. I also go to concerts quite often!
                   </li>
                 </ul>
               </section>
@@ -306,52 +300,15 @@ class About extends React.Component {
           />
 
           <a
-            href="https://www.instagram.com/kirbynator"
+            href="https://www.linkedin.com/in/zacharykirby11/"
             target="_blank"
-            id="goinsta"
+            id="goIN"
             style={{
               position: "relative",
               top: `-626px`,
               left: `32px`,
               width: "32px"
             }}
-          >
-            <Image
-              src="https://piskel-imgstore-b.appspot.com/img/a059d32e-7682-11e9-94c6-db9806cff2df.gif"
-              alt="Instagram"
-              style={{
-                height: "32px",
-                width: "32px",
-                zIndex: "0"
-              }}
-            />
-          </a>
-          <a
-            href="https://twitter.com/iAmKirbynator"
-            target="_blank"
-            id="gotwit"
-            style={{
-              position: "relative",
-              top: `-594px`,
-              left: `32px`,
-              width: "32px"
-            }}
-          >
-            <Image
-              src="https://piskel-imgstore-b.appspot.com/img/dfd84323-7683-11e9-9c7e-db9806cff2df.gif"
-              alt="Twitter"
-              style={{
-                height: "32px",
-                width: "32px",
-                zIndex: "0"
-              }}
-            />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/zacharykirby11/"
-            target="_blank"
-            id="goIN"
-            style={{ position: "relative", top: `-562px`, left: `32px` }}
           >
             <Image
               src="https://piskel-imgstore-b.appspot.com/img/74b54621-7684-11e9-852a-db9806cff2df.gif"
@@ -369,7 +326,7 @@ class About extends React.Component {
             id="gogit"
             style={{
               position: "relative",
-              top: `-530px`,
+              top: `-594px`,
               left: `32px`,
               width: "32px"
             }}
@@ -377,6 +334,43 @@ class About extends React.Component {
             <Image
               src="https://piskel-imgstore-b.appspot.com/img/73f40a80-759f-11e9-8933-1150286e7278.gif"
               alt="GitHub"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/kirbynator"
+            target="_blank"
+            id="goinsta"
+            style={{ position: "relative", top: `-562px`, left: `32px` }}
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/a059d32e-7682-11e9-94c6-db9806cff2df.gif"
+              alt="Instagram"
+              style={{
+                height: "32px",
+                width: "32px",
+                zIndex: "0"
+              }}
+            />
+          </a>
+          <a
+            href="https://twitter.com/iAmKirbynator"
+            target="_blank"
+            id="gotwit"
+            style={{
+              position: "relative",
+              top: `-530px`,
+              left: `32px`,
+              width: "32px"
+            }}
+          >
+            <Image
+              src="https://piskel-imgstore-b.appspot.com/img/dfd84323-7683-11e9-9c7e-db9806cff2df.gif"
+              alt="Twitter"
               style={{
                 height: "32px",
                 width: "32px",
