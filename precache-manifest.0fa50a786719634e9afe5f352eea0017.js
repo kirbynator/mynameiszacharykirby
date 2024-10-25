@@ -1,43 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f3c038043636adcefdade5bfee79cc3",
+    "revision": "116adabcc0d235a9a2aee6e4c0bb8a7a",
     "url": "/mynameiszacharykirby/index.html"
   },
   {
-    "revision": "518830a7d75db33c9d01",
+    "revision": "c4f837b7a19066175eac",
     "url": "/mynameiszacharykirby/static/css/2.21d2db1a.chunk.css"
   },
   {
-    "revision": "3184e30cf0355dcb0c5c",
+    "revision": "f08aca105cf124aa84bc",
     "url": "/mynameiszacharykirby/static/css/main.36497136.chunk.css"
   },
   {
-    "revision": "518830a7d75db33c9d01",
-    "url": "/mynameiszacharykirby/static/js/2.3d6a9889.chunk.js"
+    "revision": "c4f837b7a19066175eac",
+    "url": "/mynameiszacharykirby/static/js/2.987cc9ff.chunk.js"
   },
   {
-    "revision": "3184e30cf0355dcb0c5c",
-    "url": "/mynameiszacharykirby/static/js/main.6722507c.chunk.js"
+    "revision": "f08aca105cf124aa84bc",
+    "url": "/mynameiszacharykirby/static/js/main.feaf1bd0.chunk.js"
   },
   {
     "revision": "d1b8d16105e223ad85ff",
     "url": "/mynameiszacharykirby/static/js/runtime~main.384eb3ff.js"
   },
   {
-    "revision": "02af6ce8c8544ae6cd6e807b4e6dd4de",
-    "url": "/mynameiszacharykirby/static/media/5.02af6ce8.jpg"
-  },
-  {
-    "revision": "53c0b037b0f025b49c1991033a2f6ff9",
-    "url": "/mynameiszacharykirby/static/media/5.53c0b037.jpg"
-  },
-  {
     "revision": "b5ba0b442cba3648088c6d9c51c4f6ca",
     "url": "/mynameiszacharykirby/static/media/Asset_1.b5ba0b44.svg"
   },
   {
-    "revision": "282fcb3561399238f18f0a888cf41935",
-    "url": "/mynameiszacharykirby/static/media/ResumeZacharyKirby.282fcb35.pdf"
+    "revision": "6a20fde34164e5c63b43cc39b5802c59",
+    "url": "/mynameiszacharykirby/static/media/ResumeZacharyKirby.6a20fde3.pdf"
   },
   {
     "revision": "13db00b7a34fee4d819ab7f9838cc428",
@@ -58,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
     "url": "/mynameiszacharykirby/static/media/brand-icons.e8c322de.woff2"
+  },
+  {
+    "revision": "154d2f3d44973dc9f81b1855ba750185",
+    "url": "/mynameiszacharykirby/static/media/bugBattle.154d2f3d.png"
   },
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
